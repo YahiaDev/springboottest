@@ -3,6 +3,8 @@ package springboottest.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import springboottest.demo.model.Person;
@@ -44,6 +46,11 @@ public class PersonService {
 
 	public List<Person> findByFirstNameContaining(String stringToFind) {
 		return personRepo.findByFirstNameContaining(stringToFind);
-	};
+	}
+
+	public List<Person> findAllPaging(int page, int size) {
+		//return personRepo.findAll(new PageRequest(page, size, Direction.DESC, "id")).getContent();
+		return personRepo.findAll(new PageRequest(page, size)).getContent();
+	}
 
 }

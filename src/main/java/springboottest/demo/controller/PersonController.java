@@ -52,6 +52,11 @@ public class PersonController {
 		return personService.getAllPersons();
 	}
 
+	@RequestMapping(value = "/findallpaging/{page}&&{size}", method = RequestMethod.GET)
+	public List<Person> findAllPaging(int page, int size) {
+		return personService.findAllPaging(page, size);
+	}
+
 	@RequestMapping(value = "/findbyadressecity/{city}", method = RequestMethod.GET)
 	public List<Person> findByAdresseCity(@PathVariable String city) {
 		return personService.findByAdresseCity(city);

@@ -20,7 +20,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import springboottest.demo.controller.PersonController;
 import springboottest.demo.model.Person;
-import springboottest.demo.repository.PersonRepo;
 import springboottest.demo.service.PersonService;
 
 @RunWith(SpringRunner.class)
